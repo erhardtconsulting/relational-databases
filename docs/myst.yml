@@ -18,6 +18,16 @@ project:
         - file: 1_history/5_further_development.md
         - file: 1_history/6_comparison.md
         - file: 1_history/7_conclusion.md
+    - title: DBMS Überblick
+      file: 2_overview/0_intro.md
+      children:
+        - file: 2_overview/1_postgresql.md
+        - file: 2_overview/2_mysql_mariadb.md
+        - file: 2_overview/3_oracle.md
+        - file: 2_overview/4_mssql.md
+        - file: 2_overview/5_sqlite.md
+        - file: 2_overview/6_pg_course.md
+        - file: 2_overview/7_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:

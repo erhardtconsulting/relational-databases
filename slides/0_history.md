@@ -13,7 +13,6 @@ footer: 'Die Geschichte der Datenbanken'
 ---
 # Inhaltsverzeichnis
 <!--
-HTML-Kommentar:
 - Hilft den Studierenden beim Überblick
 - Folgende Punkte kurz ansprechen
 -->
@@ -28,7 +27,6 @@ HTML-Kommentar:
 ---
 # Warum Datenbanken?
 <!--
-HTML-Kommentar: 
 - Einstieg in das Thema, erklären wieso man DB benötigt
 -->
 - Daten sind Grundlage fast jeder IT-Anwendung  
@@ -38,8 +36,7 @@ HTML-Kommentar:
 
 ---
 # Wachsende Datenmengen
-<!-- 
-HTML-Kommentar:
+<!--
 - Verdeutlichen, wie gross der Bedarf ist.
 -->
 - Big Data, IoT, KI – Datenvolumen explodiert ständig  
@@ -50,7 +47,6 @@ HTML-Kommentar:
 ---
 # Frühe Datenbanken (1960er)
 <!--
-HTML-Kommentar:  
 - Hintergrund: Pioniere wie Charles W. Bachman (IDS), IBM IMS
 -->
 - Erste DBMS: Integrated Data Store (IDS), IBM IMS (hierarchisches Modell)  
@@ -60,7 +56,6 @@ HTML-Kommentar:
 ---
 # Hierarchische & Netzwerk-DB
 <!--
-HTML-Kommentar: 
 - Vor- und Nachteile nennen, IMS als Beispiel für hierarchisches DB-Modell.
 - CODASYL-Standard für Netzwerkmodell erwähnt.
 -->
@@ -71,7 +66,6 @@ HTML-Kommentar:
 ---
 # Relationaler Durchbruch (1970er–1980er)
 <!--
-HTML-Kommentar:
 - Codd und sein Paper "A Relational Model of Data..."
 - Vorteile: SQL, Ad-hoc-Abfragen, ACID-Transaktionen
 -->
@@ -83,7 +77,6 @@ HTML-Kommentar:
 ---
 # NoSQL-Alternativen (ab 2000er)
 <!--
-HTML-Kommentar:
 - Hauptkategorien: dokumentenorientiert, spaltenorientiert, Key-Value, Graph
 - Idee: Flexibilität, Skalierung, teils Verzicht auf ACID
 -->
@@ -95,7 +88,6 @@ HTML-Kommentar:
 ---
 # Neue Entwicklungen
 <!--
-HTML-Kommentar:
 - Vektor- und Blockchain-DB
 - Relevanz für KI und dezentrale Szenarien
 -->
@@ -105,7 +97,6 @@ HTML-Kommentar:
 ---
 # Vergleich & Fazit
 <!--
-HTML-Kommentar:
 - Kurzer Blick auf Einsatzfelder, Ausblick
 -->
 - Relationale DB für strukturierten ACID-Einsatz  

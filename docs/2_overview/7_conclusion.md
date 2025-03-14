@@ -1,0 +1,2 @@
+# Fazit
+Es gibt eine Vielzahl von relationalen Datenbanken, die je nach Einsatzzweck und Projektumfeld Stärken und Schwächen aufweisen. Ein grundlegendes Verständnis der Unterschiede hilft dir zu entscheiden, welches System zu den eigenen Anforderungen passt. PostgreSQL vereint viele Enterprise-Features, ist kostenfrei und hat eine starke Community – deshalb eignet es sich ideal für den Einsatz in diesem Unterricht.

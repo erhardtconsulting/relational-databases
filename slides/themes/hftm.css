@@ -62,6 +62,19 @@ section img {
     margin: 0 auto;
 }
 
+section table {
+    width: 100%;
+}
+
+section table thead td {
+    padding: 5px;
+}
+
+section table tbody td {
+    padding: 5px;
+    text-align: center;
+}
+
 section footer {
     position: absolute;
     bottom: 50px;

@@ -1,0 +1,2 @@
+# Weshalb PostgreSQL in diesem Unterricht?
+PostgreSQL verbindet die Flexibilität einer Open-Source-Lösung mit einem breiten Funktionsumfang und hoher Zuverlässigkeit. Diese Mischung ermöglicht dir, die Konzepte relationaler Datenbanken praxisnah kennenzulernen und direkt anzuwenden, ohne dich an lizenzrechtliche Einschränkungen halten zu müssen. Weiterhin bietet PostgreSQL fortgeschrittene Features, die auch in realen Projektsituationen relevant sind.
