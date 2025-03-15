@@ -28,6 +28,14 @@ project:
         - file: 2_overview/5_sqlite.md
         - file: 2_overview/6_pg_course.md
         - file: 2_overview/7_conclusion.md
+    - title: Einrichtung Lernumgebung
+      file: 3_setup/0_intro.md
+      children:
+        - file: 3_setup/1_dbeaver.md
+        - file: 3_setup/2_container_runtime.md
+        - file: 3_setup/3_start_container.md
+        - file: 3_setup/4_dbeaver_connection.md
+        - file: 3_setup/5_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:

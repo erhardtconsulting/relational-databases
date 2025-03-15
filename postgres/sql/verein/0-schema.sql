@@ -42,6 +42,7 @@ CREATE TABLE Person (
     MentorID    UUID,
     CONSTRAINT pk_Person_PersID PRIMARY KEY (PersID),
     CONSTRAINT fk_Person_MentorID FOREIGN KEY (MentorID) REFERENCES Person (PersID),
+    CONSTRAINT fk_Person_StatID FOREIGN KEY (StatID) REFERENCES Status (StatID),
     CONSTRAINT ck_Person_Austritt CHECK (Austritt IS NULL OR (Eintritt <= Austritt))
 );
 
@@ -51,6 +52,7 @@ CREATE TABLE Funktionsbesetzung (
     FunkID     UUID NOT NULL,
     PersID     UUID NOT NULL,
     CONSTRAINT fk_Funktionsbesetzung_FunkID FOREIGN KEY (FunkID) REFERENCES Funktion (FunkID),
+    CONSTRAINT fk_Funktionsbesetzung_PersID FOREIGN KEY (PersID) REFERENCES Person (PersID),
     CONSTRAINT ck_Funktionsbesetzung_Ruecktritt CHECK (Ruecktritt IS NULL OR (Antritt <= Ruecktritt))
 );
 
