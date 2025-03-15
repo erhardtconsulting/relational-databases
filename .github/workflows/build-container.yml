@@ -53,7 +53,7 @@ jobs:
           echo "TAG=${TAG}" >> ${GITHUB_ENV}
         env:
           PLATFORM: ${{ matrix.platform }}
-          IMAGE: ${{ inputs.context }}
+          CONTEXT: ${{ inputs.context }}
           DOCKERFILE: ${{ inputs.dockerfile }}
           TAG: ${{ inputs.tag }}
 
