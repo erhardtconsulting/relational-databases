@@ -32,7 +32,7 @@ jobs:
     needs: get-version
     uses: erhardtconsulting/relational-databases/.github/workflows/build-container.yml@main
     with:
-      image: "postgres"
+      context: "postgres"
       dockerfile: "postgres/verein.Dockerfile"
       tag: vereindb-${{ needs.get-version.outputs.postgres }}
       latest: false
