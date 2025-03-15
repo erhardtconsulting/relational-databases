@@ -11,7 +11,7 @@ Nachdem der PostgreSQL-Container erfolgreich gestartet wurde, können wir nun ei
 ![Datenbanktyp auswählen](img/dbeaver_select_postgresql.png)
 
 ## Verbindungsparameter konfigurieren
-
+s
 1. Gib die folgenden Verbindungsparameter ein:
 
    - **Server Host**: localhost
