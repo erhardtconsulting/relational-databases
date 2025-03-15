@@ -1,0 +1,149 @@
+name: Build and Push Container
+
+on:
+  workflow_call:
+    inputs:
+      context:
+        required: true
+        type: string
+      dockerfile:
+        default: Dockerfile
+        type: string
+      tag:
+        required: true
+        type: string
+      latest:
+        default: false
+        type: boolean
+      push:
+        default: false
+        type: boolean
+      architectures:
+        description: "List of architectures as JSON-array"
+        type: string
+        default: '["amd64","arm64"]'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        platform: ${{ fromJSON(inputs.architectures) }}
+    steps:
+      - name: Install qemu dependency
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
+
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Setup environment variables
+        run: |
+          echo "CONTEXT=${CONTEXT}" >> ${GITHUB_ENV}
+          echo "PLATFORM=${PLATFORM}" >> ${GITHUB_ENV}
+          [ "${PLATFORM}" = "amd64" ] && echo "BUILDAH_ARCH=linux/amd64" >> ${GITHUB_ENV} || true
+          [ "${PLATFORM}" = "arm64" ] && echo "BUILDAH_ARCH=linux/arm64/v8" >> ${GITHUB_ENV} || true
+          echo "DOCKERFILE=${DOCKERFILE}" >> ${GITHUB_ENV}
+          echo "TAG=${TAG}" >> ${GITHUB_ENV}
+        env:
+          PLATFORM: ${{ matrix.platform }}
+          IMAGE: ${{ inputs.context }}
+          DOCKERFILE: ${{ inputs.dockerfile }}
+          TAG: ${{ inputs.tag }}
+
+      - name: Build image with buildah
+        uses: redhat-actions/buildah-build@7a95fa7ee0f02d552a32753e7414641a04307056 # v2
+        with:
+          image: erhardtconsulting/relational-databases
+          tags: ${{ env.TAG }}-${{ env.PLATFORM }}
+          platform: ${{ env.BUILDAH_ARCH }}
+          context: ${{ env.CONTEXT }}
+          containerfiles: |
+            ${{ env.DOCKERFILE }}
+
+      - name: Create tar image
+        run: |
+          buildah push erhardtconsulting/relational-databases:${{ env.TAG }}-${{ env.PLATFORM }} oci-archive:/tmp/relational-databases-${{ env.TAG }}-${{ env.PLATFORM }}.tar
+
+      # Upload container
+      - name: Upload container
+        uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4
+        with:
+          name: relational-databases-${{ env.TAG }}-${{ env.PLATFORM }}
+          path: /tmp/relational-databases-${{ env.TAG }}-${{ env.PLATFORM }}.tar
+          if-no-files-found: error
+          retention-days: 3
+
+  push:
+    if: ${{ inputs.push }}
+    name: Push image
+    runs-on: ubuntu-24.04
+    needs: build
+    steps:
+      - name: Setup environment variables
+        run: |
+          echo "TAG=${TAG}" >> ${GITHUB_ENV}
+          echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        env:
+          TAG: ${{ inputs.tag }}
+
+      - name: Download all artifacts
+        run: |
+          ARCHS=$(echo '${{ inputs.architectures }}' | jq -r '.[]')
+          mkdir -p /tmp
+          for arch in $ARCHS; do
+            echo "==> Downloading artifact: $arch"
+            gh run --repo github.com/erhardtconsulting/images download ${GITHUB_RUN_ID} --name "relational-databases-${TAG}-$arch" --dir /tmp
+          done
+        env:
+          TAG: ${{ env.TAG }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List images
+        run: ls -lh /tmp
+
+      - name: Create multiarch-manifest
+        run: |
+          ARCHS=$(echo '${{ inputs.architectures }}' | jq -r '.[]')
+          buildah manifest create erhardtconsulting/relational-databases:${TAG}
+          for arch in $ARCHS; do
+            echo "==> Adding: $arch"
+            buildah manifest add erhardtconsulting/relational-databases:${TAG} oci-archive:/tmp/relational-databases-${TAG}-${arch}.tar
+          done
+        env:
+          TAG: ${{ env.TAG }}
+
+      - name: Add tags
+        run: |
+          for registry in "ghcr.io"; do
+            buildah tag erhardtconsulting/relational-databases:${{ env.TAG }} ${registry}/erhardtconsulting/relational-databases:${{ env.TAG }}
+          done
+          echo "PUSH_TAGS=${{ env.TAG }}" >> $GITHUB_ENV
+
+      - name: Tag image as latest
+        if: ${{ inputs.latest }}
+        run: |
+          for registry in "ghcr.io"; do
+            buildah tag erhardtconsulting/relational-databases:${{ env.TAG }} ${registry}/erhardtconsulting/relational-databases:latest
+          done
+          echo "PUSH_TAGS=${{ env.TAG }} latest" >> $GITHUB_ENV
+
+      - name: Log in to ghcr.io
+        uses: redhat-actions/podman-login@4934294ad0449894bcd1e9f191899d7292469603 # v1
+        with:
+          registry: ghcr.io/erhardtconsulting
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Push image to ghcr.io
+        uses: redhat-actions/push-to-registry@5ed88d269cf581ea9ef6dd6806d01562096bee9c # v2
+        with:
+          registry: ghcr.io/erhardtconsulting
+          image: relational-databases
+          tags: ${{ env.PUSH_TAGS }}
