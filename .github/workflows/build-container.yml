@@ -99,7 +99,7 @@ jobs:
           mkdir -p /tmp
           for arch in $ARCHS; do
             echo "==> Downloading artifact: $arch"
-            gh run --repo github.com/erhardtconsulting/images download ${GITHUB_RUN_ID} --name "relational-databases-${TAG}-$arch" --dir /tmp
+            gh run --repo github.com/erhardtconsulting/relational-databases download ${GITHUB_RUN_ID} --name "relational-databases-${TAG}-$arch" --dir /tmp
           done
         env:
           TAG: ${{ env.TAG }}
