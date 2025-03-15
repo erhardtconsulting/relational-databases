@@ -58,8 +58,8 @@ Der Container ist mit folgenden Standardzugangsdaten konfiguriert:
 - **Host**: localhost
 - **Port**: 5432
 - **Datenbank**: verein
-- **Benutzername**: postgres
-- **Passwort**: postgres
+- **Benutzername**: vereinuser
+- **Passwort**: vereinuser
 
 Diese Zugangsdaten werden wir im nächsten Schritt verwenden, um eine Verbindung mit DBeaver herzustellen.
 
