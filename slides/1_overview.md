@@ -63,7 +63,7 @@ footer: 'Übersicht über relationale Datenbanksysteme'
 -->
 | **Vorteile** | **Nachteile** |
 |--------------|---------------|
-| Open-Source, große Community | Für kleine Projekte überdimensioniert |
+| Open-Source, grosse Community | Für kleine Projekte überdimensioniert |
 | Hohe Erweiterbarkeit | Weniger kommerzieller Support |
 | Sehr standardkonform | |
 
@@ -74,7 +74,7 @@ footer: 'Übersicht über relationale Datenbanksysteme'
 -->
 - **Ideal für**:
   - Komplexe Datenstrukturen
-  - Große Datenmengen
+  - Grosse Datenmengen
   - Hohe Datenintegrität
   - Viele parallele Transaktionen
 
@@ -185,7 +185,7 @@ footer: 'Übersicht über relationale Datenbanksysteme'
 | **Vorteile** | **Nachteile** |
 |--------------|---------------|
 | Exzellente Dokumentation | Teures Lizenzmodell |
-| Stark in Windows-Umgebungen | Selten außerhalb Microsoft-Welt |
+| Stark in Windows-Umgebungen | Selten ausserhalb Microsoft-Welt |
 | Azure/Power BI-Integration | |
 
 ---
@@ -264,7 +264,7 @@ footer: 'Übersicht über relationale Datenbanksysteme'
 -->
 - Verschiedene DBMS für unterschiedliche Anforderungen
 - Auswahl basierend auf:
-  - Projektgröße und -komplexität
+  - Projektgrösse und -komplexität
   - Budget und Umgebung
   - Entwicklungs-Stack
   - Performanceanforderungen

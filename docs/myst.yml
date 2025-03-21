@@ -36,6 +36,14 @@ project:
         - file: 3_setup/3_start_container.md
         - file: 3_setup/4_dbeaver_connection.md
         - file: 3_setup/5_conclusion.md
+    - title: ACID und Transaktionen
+      file: 4_acid_transactions/0_intro.md
+      children:
+        - file: 4_acid_transactions/1_origins.md
+        - file: 4_acid_transactions/2_acid_properties.md
+        - file: 4_acid_transactions/3_transactions_in_practice.md
+        - file: 4_acid_transactions/4_challenges_solutions.md
+        - file: 4_acid_transactions/5_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:

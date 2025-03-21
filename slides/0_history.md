@@ -50,7 +50,7 @@ footer: 'Die Geschichte der Datenbanken'
 - Hintergrund: Pioniere wie Charles W. Bachman (IDS), IBM IMS
 -->
 - Erste DBMS: Integrated Data Store (IDS), IBM IMS (hierarchisches Modell)  
-- Motivation: Kontrolle großer Datenmengen, effizienter Zugriff statt simpler Dateiverwaltung  
+- Motivation: Kontrolle grosser Datenmengen, effizienter Zugriff statt simpler Dateiverwaltung  
 - Navigationaler Ansatz: Daten in fest verdrahteten Strukturen, Verknüpfungen statt flexibler Abfragen  
 
 ---
