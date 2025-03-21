@@ -36,6 +36,10 @@ section ol, section ul {
     padding-left: 1.5em;
 }
 
+ul {
+    padding-top: 1em;
+}
+
 ol li, ul li {
     padding-bottom: 0.5em;
 }
@@ -48,6 +52,7 @@ section h1 {
 
 section h2 {
     font-size: 1.25em;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 

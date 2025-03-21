@@ -44,6 +44,14 @@ project:
         - file: 4_acid_transactions/3_transactions_in_practice.md
         - file: 4_acid_transactions/4_challenges_solutions.md
         - file: 4_acid_transactions/5_conclusion.md
+    - title: SQL-Grundlagen
+      file: 5_sql_basics/0_intro.md
+      children:
+        - file: 5_sql_basics/1_datatypes.md
+        - file: 5_sql_basics/2_select_queries.md
+        - file: 5_sql_basics/3_data_manipulation.md
+        - file: 5_sql_basics/4_practical_examples.md
+        - file: 5_sql_basics/5_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:
