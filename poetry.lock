@@ -771,6 +771,22 @@ files = [
 ]
 
 [[package]]
+name = "linuxdir2html"
+version = "1.6.1"
+description = "HTML directory listing"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = []
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/erhardtconsulting/LinuxDir2HTML.git"
+reference = "master"
+resolved_reference = "11e3fec878792924c1cc1d95cfd07f03d4d2d629"
+
+[[package]]
 name = "markupsafe"
 version = "3.0.2"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1833,4 +1849,4 @@ test = ["websockets"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "31da9bc4b7c295d90219e30840d75adb875a6b1d3a9319443f3d80d00a07e2e6"
+content-hash = "c6381c3e6780d2a1910f8aabd9e590fac070f42b1d2c216d2d1e027239c7d637"

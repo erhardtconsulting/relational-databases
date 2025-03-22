@@ -8,6 +8,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "jupyter-book (>=2.0.0a0)",
+    "linuxdir2html @ git+https://github.com/erhardtconsulting/LinuxDir2HTML.git@master",
 ]
 
 [tool.poetry]

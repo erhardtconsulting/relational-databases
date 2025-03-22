@@ -110,13 +110,6 @@ jobs:
           npm run slides:pdf
           mkdir -p ${EXERCISES_BUILD_DIR}/Praesentationen
           cp -r slides/_build/*.pdf ${EXERCISES_BUILD_DIR}/Praesentationen
-
-      - name: Install patched linuxdir2html
-        run: |
-          mkdir -p deps
-          git clone https://github.com/erhardtconsulting/LinuxDir2HTML.git deps/linuxdir2html
-          cd deps/linuxdir2html
-          pip install -e .
       
       - name: Build extras index page
         run: |
