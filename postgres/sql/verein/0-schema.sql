@@ -15,13 +15,13 @@ ALTER SCHEMA public OWNER TO vereinuser;
 -- create tables
 CREATE TABLE Funktion (
     FunkID     UUID NOT NULL,
-    Bezeichner VARCHAR(20) NOT NULL,
+    Bezeichner VARCHAR(100) NOT NULL,
     CONSTRAINT pk_Funktion_FunkID PRIMARY KEY (FunkID)
 );
 
 CREATE TABLE Status (
     StatID     UUID NOT NULL,
-    Bezeichner VARCHAR(20) NOT NULL ,
+    Bezeichner VARCHAR(100) NOT NULL ,
     Beitrag    NUMERIC,
     CONSTRAINT pk_Status_StatID PRIMARY KEY (StatID),
     CONSTRAINT ck_Status_Beitrag CHECK (Beitrag IS NULL OR (Beitrag >= 0))
@@ -29,13 +29,13 @@ CREATE TABLE Status (
 
 CREATE TABLE Person (
     PersID      UUID NOT NULL,
-    Name        VARCHAR(20) NOT NULL,
-    Vorname     VARCHAR(15) NOT NULL,
-    Strasse_Nr  VARCHAR(20) NOT NULL,
+    Name        VARCHAR(50) NOT NULL,
+    Vorname     VARCHAR(50) NOT NULL,
+    Strasse_Nr  VARCHAR(50) NOT NULL,
     PLZ         CHAR(4) NOT NULL,
-    Ort         VARCHAR(20) NOT NULL,
+    Ort         VARCHAR(50) NOT NULL,
     bezahlt     CHAR(1) NOT NULL,
-    Bemerkungen VARCHAR(25) ,
+    Bemerkungen VARCHAR(100) ,
     Eintritt    DATE,
     Austritt    DATE,
     StatID      UUID NOT NULL,
@@ -58,8 +58,8 @@ CREATE TABLE Funktionsbesetzung (
 
 CREATE TABLE Anlass (
     AnlaID     UUID NOT NULL,
-    Bezeichner VARCHAR(20) NOT NULL,
-    Ort        VARCHAR(20),
+    Bezeichner VARCHAR(100) NOT NULL,
+    Ort        VARCHAR(50),
     Datum      DATE NOT NULL,
     Kosten     NUMERIC,
     OrgID      UUID NOT NULL,
@@ -77,17 +77,17 @@ CREATE TABLE Teilnehmer (
 
 CREATE TABLE Sponsor (
     SponID       UUID NOT NULL,
-    Name         VARCHAR(20) NOT NULL,
-    Strasse_Nr   VARCHAR(20) NOT NULL,
+    Name         VARCHAR(50) NOT NULL,
+    Strasse_Nr   VARCHAR(50) NOT NULL,
     PLZ          CHAR(4) NOT NULL,
-    Ort          VARCHAR(20) NOT NULL,
+    Ort          VARCHAR(50) NOT NULL,
     Spendentotal NUMERIC NOT NULL,
     CONSTRAINT pk_Sponsor_SponID PRIMARY KEY (SponID)
 );
 
 CREATE TABLE Spende (
     SpenID     UUID NOT NULL,
-    Bezeichner VARCHAR(20),
+    Bezeichner VARCHAR(100),
     Datum      DATE DEFAULT CURRENT_DATE NOT NULL,
     Betrag     NUMERIC NOT NULL,
     SponID     UUID NOT NULL ,
