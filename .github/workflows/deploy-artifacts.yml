@@ -92,7 +92,7 @@ jobs:
             dir=$(dirname "$file")
             base_dir=$(basename "$dir")
             filename=$(basename "$file" .md)
-            target_dir="${EXERCISES_BUILD_DIR}/Aufgaben"
+            target_dir="${EXERCISES_BUILD_DIR}/Aufgaben/${base_dir}"
             
             mkdir -p "${target_dir}"
             echo "Processing $file -> ${target_dir}/${filename}.pdf"
@@ -102,7 +102,7 @@ jobs:
               -f markdown \
               -t pdf \
               "/data/${file}" \
-              -o "/data/${target_dir}/${base_dir}/${filename}.pdf"
+              -o "/data/${target_dir}/${filename}.pdf"
           done
       
       - name: Convert slides
