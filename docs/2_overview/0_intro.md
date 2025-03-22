@@ -11,8 +11,10 @@ graph TB
     A --> F[SQLite]
 ```
 
-## Lernziele
+:::{important} Lernziele
+
 Nach Abschluss dieses Kapitels solltest du:  
 - Wissen, welche verschiedenen relationalen DBMS verfügbar sind.  
 - Die grundlegende Geschichte und Alleinstellungsmerkmale der wichtigsten DBMS benennen können.  
 - Vor- und Nachteile der Systeme einschätzen können.
+:::

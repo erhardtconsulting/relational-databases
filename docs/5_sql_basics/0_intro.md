@@ -27,8 +27,7 @@ graph TD
     A --> E[Praxisbeispiele]
 ```
 
-## Lernziele
-
+:::{important} Lernziele
 Nach Abschluss dieses Kapitels wirst du:
 
 - Die wichtigsten SQL-Datentypen und ihre Anwendungsbereiche verstehen
@@ -42,3 +41,4 @@ Nach Abschluss dieses Kapitels wirst du:
 - Praktische Erfahrung mit SQL-Befehlen in PostgreSQL gesammelt haben
 
 Dieses Kapitel konzentriert sich auf die Grundlagen. Fortgeschrittene Konzepte wie Joins, Unterabfragen und Optimierungstechniken werden in späteren Kapiteln behandelt.
+:::

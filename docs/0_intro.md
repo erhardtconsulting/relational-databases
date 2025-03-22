@@ -32,10 +32,11 @@ Ebenso danke ich der Klasse im Frühlingssemester 2024, die mit ihrem konstrukti
 
 Ein herzliches Dankeschön auch an Kurt Munter, den Bereichsleiter der Informatik an der HFTM, der stets ein offenes Ohr hat und mich bei Fragen und Anliegen jederzeit unterstützt. Seine Gespräche und Hinweise haben massgeblich dazu beigetragen, das Projekt erfolgreich voranzubringen.
 
-## Lernziele
+:::{important} Lernziele
 
 1. **Bedeutung erkennen:** Die Lesenden verstehen, weshalb Datenbanken in einer digitalisierten Welt unverzichtbar sind und welche Vorteile sie für Unternehmen und Organisationen bieten.  
 2. **Verschiedene Datenbanktypen kennen:** Sie erhalten einen Überblick über relationale und alternative Datenbankmodelle (z. B. NoSQL) und lernen die Einsatzgebiete dieser Technologien einzuschätzen.  
 3. **Strukturierung und Modellierung:** Sie sind in der Lage, komplexe Datenstrukturen in relationalen Datenbanken abzubilden, dabei Konzepte wie Normalisierung zu nutzen und sinnvolle Tabellen- sowie Beziehungsschemata zu entwerfen.  
 4. **Effiziente Datenverwaltung:** Sie lernen, Daten mithilfe von SQL und praktischen Tools sicher abzulegen, abzufragen und zu verwalten.  
 5. **Auswertung und Praxisbezug:** Sie können umfangreiche Abfragen formulieren, Daten analysieren und die gewonnenen Erkenntnisse in praxisnahen Kontexten (z. B. Berichten, Visualisierungen) sinnvoll einsetzen.
+:::

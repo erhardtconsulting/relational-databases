@@ -11,9 +11,11 @@ graph TD
     D --> E
 ```
 
-## Lernziele
+:::{important} Lernziele
+
 Nach Abschluss dieses Kapitels solltest du:  
 - DBeaver als Datenbank-Client installiert haben.  
 - Podman als Container-Runtime eingerichtet haben.  
 - Den Unterrichts-Container mit der PostgreSQL-Datenbank gestartet haben.  
 - Eine Verbindung zwischen DBeaver und der Datenbank hergestellt haben.
+:::

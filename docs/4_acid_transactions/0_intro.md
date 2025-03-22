@@ -20,8 +20,7 @@ graph TD
     A --> F[Praktische Übungen]
 ```
 
-## Lernziele
-
+:::{important} Lernziele
 Nach Abschluss dieses Kapitels wirst du:
 
 - Die Bedeutung und historischen Ursprünge des ACID-Paradigmas verstehen
@@ -31,3 +30,4 @@ Nach Abschluss dieses Kapitels wirst du:
 - Isolationsebenen und deren Auswirkungen auf Nebenläufigkeit verstehen
 - Typische Probleme wie Deadlocks identifizieren und Lösungsstrategien kennen
 - Praktische Erfahrung mit Transaktionen in PostgreSQL gesammelt haben
+:::
