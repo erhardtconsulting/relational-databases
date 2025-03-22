@@ -27,7 +27,7 @@ Mit dieser Grundkonfiguration bist du nun bereit, die folgenden Schritte umzuset
 
 - **Eigene Daten verwalten** – Mit den erworbenen Kenntnissen kannst du Daten hinzufügen, ändern, abfragen und löschen.
 
-## Wichtige Befehle im Überblick
+:::{tip} Wichtige Befehle im Überblick
 
 Hier sind die wichtigsten Befehle, die du für die Verwaltung des Containers benötigen wirst:
 
@@ -40,6 +40,7 @@ Hier sind die wichtigsten Befehle, die du für die Verwaltung des Containers ben
 | Container-Logs anzeigen | `podman logs db-unterricht` |
 
 > **Hinweis**: Solltest du Docker statt Podman verwenden, sind die Befehle identisch - ersetze einfach `podman` durch `docker`.
+:::
 
 ## Fazit
 
