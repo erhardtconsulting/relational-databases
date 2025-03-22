@@ -12,6 +12,9 @@ env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
   # You may need to change this to `BASE_URL: ''`
   BASE_URL: ""
+  EXERCISES_DIR: "exercises/"
+  EXERCISES_BUILD_DIR: "docs/_build/extras/Aufgaben"
+
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -71,6 +74,29 @@ jobs:
           source .venv/bin/activate
           cd docs/
           jupyter book build --html
+      
+      - name: Convert Exercises
+        run: |
+          find "${EXERCISES_DIR}" -type f -name "*.md" | while read file; do
+            dir=$(dirname "$file")
+            filename=$(basename "$file" .md)
+            target_dir="${EXERCISES_BUILD_DIR}/${dir#${EXERCISES_DIR}/}"
+            
+            mkdir -p "${target_dir}"
+            echo "Processing $file -> ${target_dir}/${filename}.pdf"
+            
+            podman run --rm -v "$(pwd):/data" docker.io/pandoc/extra \
+              --template eisvogel \
+              -f markdown \
+              -t pdf \
+              "/data/${file}" \
+              -o "/data/${target_dir}/${filename}.pdf"
+          done
+
+      - name: Build extras index page
+        run: |
+          source .venv/bin/activate
+          linuxdir2html --links docs/_build/extras docs/_build/extras/index
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3

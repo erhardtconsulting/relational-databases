@@ -771,6 +771,18 @@ files = [
 ]
 
 [[package]]
+name = "linuxdir2html"
+version = "1.6.1"
+description = "HTML directory listing"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "linuxdir2html-1.6.1-py3-none-any.whl", hash = "sha256:0ea08f8d2ba9d17644333604aead9c8ef04a13b3e2e69f196d11298f722c08b8"},
+    {file = "linuxdir2html-1.6.1.tar.gz", hash = "sha256:605584feb9109a16a78e4e14ff6c81896fcff4b4a49027e291aa4a993f5d7693"},
+]
+
+[[package]]
 name = "markupsafe"
 version = "3.0.2"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1833,4 +1845,4 @@ test = ["websockets"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "31da9bc4b7c295d90219e30840d75adb875a6b1d3a9319443f3d80d00a07e2e6"
+content-hash = "2f9a2a6f6977c704afa292ff30f496db0b0a951a7931fb9fe9fdd5540b7409fc"

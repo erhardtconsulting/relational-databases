@@ -7,7 +7,8 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "jupyter-book (>=2.0.0a0)"
+    "jupyter-book (>=2.0.0a0)",
+    "linuxdir2html (>=1.6.1,<2.0.0)"
 ]
 
 [tool.poetry]
