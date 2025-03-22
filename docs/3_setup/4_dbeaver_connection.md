@@ -60,8 +60,8 @@ SELECT * FROM person LIMIT 10;
 
 Mit DBeaver kannst du auch die Schema-Struktur visualisieren:
 
-1. Rechtsklicke auf die Verbindung und wähle "Diagramm erstellen" → "Schema-Diagramm".
-2. Wähle das "public"-Schema aus und bestätige.
+1. Wähle die Datenbank aus.
+2. Rechtsklick auf das "public"-Schema und "Schema anzeigen".
 3. DBeaver generiert ein ER-Diagramm mit allen Tabellen und ihren Beziehungen.
 
 ![ER-Diagramm](img/dbeaver_er_diagram.png)
