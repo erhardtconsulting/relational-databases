@@ -30,14 +30,30 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       
-      - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4
+      - name: Install NodeJS 22.x
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4
         with:
           node-version: 22.x
+      
+      - name: Cache NodeJS environment
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node
+      
+      - name: Install NodeJS dependencies
+        run: |
+          npm install --ci
 
       - name: Set up python
         id: setup-python
@@ -74,6 +90,7 @@ jobs:
         run: |
           find "${EXERCISES_DIR}" -type f -name "*.md" | while read file; do
             dir=$(dirname "$file")
+            base_dir=$(basename "$dir")
             filename=$(basename "$file" .md)
             target_dir="${EXERCISES_BUILD_DIR}/Aufgaben"
             
@@ -85,8 +102,14 @@ jobs:
               -f markdown \
               -t pdf \
               "/data/${file}" \
-              -o "/data/${target_dir}/${filename}.pdf"
+              -o "/data/${target_dir}/${base_dir}/${filename}.pdf"
           done
+      
+      - name: Convert slides
+        run: |
+          npm run slides:pdf
+          mkdir -p ${EXERCISES_BUILD_DIR}/Präsentationen
+          cp -r slides/_build/*.pdf ${EXERCISES_BUILD_DIR}/Präsentationen
 
       - name: Build extras index page
         run: |
