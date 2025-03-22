@@ -108,14 +108,14 @@ jobs:
       - name: Convert slides
         run: |
           npm run slides:pdf
-          mkdir -p ${EXERCISES_BUILD_DIR}/Präsentationen
-          cp -r slides/_build/*.pdf ${EXERCISES_BUILD_DIR}/Präsentationen
+          mkdir -p ${EXERCISES_BUILD_DIR}/Praesentationen
+          cp -r slides/_build/*.pdf ${EXERCISES_BUILD_DIR}/Praesentationen
 
       - name: Build extras index page
         run: |
           source .venv/bin/activate
-          cd "${EXERCISES_BUILD_DIR}"
-          linuxdir2html --links . index
+          cd "${EXERCISES_BUILD_DIR}/../"
+          linuxdir2html --links ./extras ./extras/index
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
