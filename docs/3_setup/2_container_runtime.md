@@ -28,11 +28,12 @@ sudo apt-get -y install podman
 sudo dnf -y install podman
 ```
 
-## Docker als Alternative
+:::{seealso} Docker als Alternative
 
 Falls Podman auf deinem System nicht verfügbar sein sollte, kannst du alternativ Docker verwenden. Die Befehle und Funktionen sind vergleichbar, allerdings benötigt Docker in der Regel Root-Rechte.
 
-### Docker Kurzanleitung
+**Docker Kurzanleitung**
+
 - Windows/macOS: [Docker Desktop](https://www.docker.com/products/docker-desktop/) herunterladen und installieren
 - Linux (Ubuntu): 
   ```bash
@@ -40,6 +41,7 @@ Falls Podman auf deinem System nicht verfügbar sein sollte, kannst du alternati
   sudo apt-get install docker.io
   sudo usermod -aG docker $USER
   ```
+:::
 
 ## Überprüfung der Installation
 
