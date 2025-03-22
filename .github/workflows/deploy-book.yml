@@ -13,7 +13,7 @@ env:
   # You may need to change this to `BASE_URL: ''`
   BASE_URL: ""
   EXERCISES_DIR: "exercises/"
-  EXERCISES_BUILD_DIR: "docs/_build/extras/Aufgaben"
+  EXERCISES_BUILD_DIR: "docs/_build/html/extras"
 
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -96,7 +96,7 @@ jobs:
       - name: Build extras index page
         run: |
           source .venv/bin/activate
-          linuxdir2html --links docs/_build/extras docs/_build/extras/index
+          linuxdir2html --links "${EXERCISES_BUILD_DIR}" "${EXERCISES_BUILD_DIR}/index"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
