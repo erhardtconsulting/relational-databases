@@ -8,6 +8,10 @@ on:
       - 'docs/**'
       - 'exercises/**'
       - '.github/workflows/deploy-artifacts.yml'
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - 'package.json'
+      - 'package-lock.json'
 
 env:
   BASE_URL: ""
