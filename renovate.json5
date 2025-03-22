@@ -2,5 +2,16 @@
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
     'github>erhardtconsulting/renovate-rules:default'
+  ],
+  packageRules: [
+    // Auto-merge docker minor, patch, digest
+    {
+      matchDatasources: ['docker'],
+      matchPackageNames: [
+        'docker.io/library/postgres'
+      ],
+      matchUpdateTypes: ['minor', 'patch', 'digest'],
+      automerge: true
+    },
   ]
 }
