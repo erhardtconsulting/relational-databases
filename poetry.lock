@@ -784,7 +784,7 @@ develop = false
 type = "git"
 url = "https://github.com/erhardtconsulting/LinuxDir2HTML.git"
 reference = "master"
-resolved_reference = "11e3fec878792924c1cc1d95cfd07f03d4d2d629"
+resolved_reference = "802d418f29d5a6c963c4e47a30d8a3fea216402e"
 
 [[package]]
 name = "markupsafe"
