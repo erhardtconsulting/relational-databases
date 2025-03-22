@@ -16,13 +16,18 @@ This course provides comprehensive knowledge about relational databases, coverin
 - Database design and normalization
 - Performance optimization
 - Modern database trends
+- Working with [PostgreSQL](https://www.postgresql.org/)
 
-## Technology Stack
+## Access
 
-This project uses:
+You can access the course materials online:
 
-- **[Jupyter Book](https://jupyterbook.org/)** and **[MyST](https://myst-parser.readthedocs.io/)** for documentation
-- **[Marp](https://marp.app/)** for presentation slides
+- **[Course Book](https://relational-databases.erhardt.consulting/)**
+- **[Slides](https://relational-databases.erhardt.consulting/extras/#/Praesentationen)**
+- **[Exercises](https://relational-databases.erhardt.consulting/extras/#/Aufgaben)**
+- **[Docker Container](https://github.com/erhardtconsulting/relational-databases/pkgs/container/relational-databases)**
+
+You are free to use these materials under the [CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Purpose
 
@@ -32,26 +37,15 @@ This repository serves as:
 2. A resource for students during and after the course
 3. A reference guide for anyone interested in relational databases
 
-## Contributing
-
-We welcome contributions to improve and expand these materials:
-
-- Open an **Issue** for bugs, suggestions, or content improvements
-- Submit a **Pull Request** with proposed changes or additions
-
-## License
-
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License (CC-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/).
-
-You are free to:
-- **Share** — copy and redistribute the material in any medium or format
-- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
-
-Under the following terms:
-- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-
 ## Setup and Usage
+
+### Technology Stack
+
+This project uses:
+
+- **[Jupyter Book](https://jupyterbook.org/)** and **[MyST](https://myst-parser.readthedocs.io/)** for documentation
+- **[Marp](https://marp.app/)** for presentation slides
+- **[Pandoc](https://pandoc.org/)** for other documents, like exercises.
 
 ### Building Documentation
 
@@ -82,6 +76,21 @@ To build and view the presentation slides:
    npm run slides:serve
    ```
 
-## Repository
+## Contributing
 
-GitHub: [https://github.com/erhardtconsulting/relational-databases/](https://github.com/erhardtconsulting/relational-databases/)
+We welcome contributions to improve and expand these materials:
+
+- Open an **Issue** for bugs, suggestions, or content improvements
+- Submit a **Pull Request** with proposed changes or additions
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License (CC-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/).
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
