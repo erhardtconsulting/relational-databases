@@ -1,0 +1,85 @@
+name: Fehler im Lehrmaterial melden
+description: Melde einen Fehler in Buch, Präsentation oder Übungsblättern
+title: "[Bug]: "
+labels: ["bug", "lehrmaterial"]
+assignees:
+  - chrootlogin
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Fehlermeldung für Lehrmaterial
+        Danke, dass du dir Zeit nimmst, einen Fehler zu melden! Bitte fülle die folgenden Informationen aus, damit wir den Fehler schnell beheben können.
+
+  - type: dropdown
+    id: material-type
+    attributes:
+      label: Materialtyp
+      description: In welchem Teil des Lehrmaterials hast du den Fehler gefunden?
+      options:
+        - Buch/Dokumentation (MyST)
+        - Präsentation/Folien (Marp)
+        - Übungsblätter
+        - Code-Beispiele/SQL-Skripte
+        - Sonstiges
+    validations:
+      required: true
+
+  - type: dropdown
+    id: error-type
+    attributes:
+      label: Fehlertyp
+      description: Um welche Art von Fehler handelt es sich?
+      options:
+        - Tippfehler/Rechtschreibung
+        - Fachlicher/Inhaltlicher Fehler
+        - Unklare Erklärung/Formulierung
+        - Fehlerhafte Beispiele/Code
+        - Problem mit SQL-Skript
+        - Fehlendes oder unvollständiges Material
+        - Sonstiges
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Ort des Fehlers
+      description: Wo genau befindet sich der Fehler? (Kapitel, Seitennummer, Folie, Dateiname, etc.)
+      placeholder: "Beispiel: Kapitel 4.2, Seite 42, Folie 15 in '4 - ACID und Transaktionen.md'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Fehlerbeschreibung
+      description: Beschreibe den Fehler so genau wie möglich
+      placeholder: "Was genau ist falsch oder unklar? Wie hast du den Fehler bemerkt?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Korrekturvorschlag (optional)
+      description: Falls du einen Vorschlag hast, wie der Fehler behoben werden könnte
+      placeholder: "Dein Vorschlag für eine Korrektur oder Verbesserung"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Zusätzlicher Kontext (optional)
+      description: Weitere Informationen, die bei der Behebung des Fehlers helfen könnten
+      placeholder: "Screenshots, Browser-Version, Betriebssystem, etc."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Vielen Dank für deinen Beitrag!
+        Dein Feedback hilft uns, das Lehrmaterial für alle Studierenden zu verbessern.
