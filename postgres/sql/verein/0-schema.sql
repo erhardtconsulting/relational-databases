@@ -79,7 +79,7 @@ CREATE TABLE Teilnehmer (
 CREATE TABLE Sponsor (
     SponID       UUID NOT NULL,
     Name         VARCHAR(50) NOT NULL,
-    Strasse_Nr   VARCHAR(50) NOT NULL,
+    Strasse_Nr   VARCHAR(50),
     PLZ          CHAR(4) NOT NULL,
     Ort          VARCHAR(50) NOT NULL,
     Spendentotal NUMERIC NOT NULL,
