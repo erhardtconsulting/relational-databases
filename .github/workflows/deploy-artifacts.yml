@@ -96,7 +96,7 @@ jobs:
             dir=$(dirname "$file")
             base_dir=$(basename "$dir")
             filename=$(basename "$file" .md)
-            target_dir="${EXERCISES_BUILD_DIR}/Aufgaben/${base_dir}"
+            target_dir="${EXERCISES_BUILD_DIR}/exercises/${base_dir}"
             
             mkdir -p "${target_dir}"
             echo "Processing $file -> ${target_dir}/${filename}.pdf"
@@ -112,8 +112,8 @@ jobs:
       - name: Convert slides
         run: |
           npm run slides:pdf
-          mkdir -p ${EXERCISES_BUILD_DIR}/Praesentationen
-          cp -r slides/_build/*.pdf ${EXERCISES_BUILD_DIR}/Praesentationen
+          mkdir -p ${EXERCISES_BUILD_DIR}/slides
+          cp -r slides/_build/*.pdf ${EXERCISES_BUILD_DIR}/slides
       
       - name: Build extras index page
         run: |

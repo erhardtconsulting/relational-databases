@@ -58,13 +58,13 @@ site:
   template: book-theme
   nav:
     - title: Präsentationen
-      url: https://relational-databases.erhardt.consulting/extras/#/Praesentationen
+      url: https://relational-databases.erhardt.consulting/extras/#/slides
     - title: Übungsaufgaben
       children:
         - title: ACID und Transaktionen
-          url: "https://relational-databases.erhardt.consulting/extras/#/Aufgaben/4%20-%20ACID%20und%20Transaktionen"
+          url: https://relational-databases.erhardt.consulting/extras/#/exercises/4_acid_transaktionen
         - title: SQL Grundlagen
-          url: "https://relational-databases.erhardt.consulting/extras/#/Aufgaben/5%20-%20SQL%20Basics"
+          url: https://relational-databases.erhardt.consulting/extras/#/exercises/5_sql_grundlagen
   options:
     logo_text: Relationale Datenbanken
     hide_outline: true
