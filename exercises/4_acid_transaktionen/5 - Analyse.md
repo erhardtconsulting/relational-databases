@@ -1,3 +1,12 @@
+---
+title: "ACID und Transaktionen / Übung 5: Analyse mit PostgreSQL-Systemkatalogtabellen"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - ACID
+    - Transaktion
+---
 # Übung 5: Analyse mit PostgreSQL-Systemkatalogtabellen
 
 ## Warum ist die Analyse von Transaktionen wichtig?

@@ -1,3 +1,12 @@
+---
+title: "ACID und Transaktionen / Übung 1: Atomarität demonstrieren"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - ACID
+    - Transaktion
+---
 # Übung 1: Atomarität demonstrieren
 
 ## Warum ist Atomarität wichtig?
@@ -14,6 +23,9 @@ Für diese Übung benötigst du:
 Um sicherzustellen, dass alle Übungen reproduzierbar sind, erstellen wir zunächst eine temporäre Tabelle für unsere Tests:
 
 ```sql
+-- Lösche Transaktionsübungstabelle, wenn sie existiert
+DROP TABLE IF EXISTS transaktions_test;
+
 -- Diese Tabelle verwenden wir für unsere Transaktionsübungen
 CREATE TABLE IF NOT EXISTS transaktions_test (
     id SERIAL PRIMARY KEY,
@@ -41,24 +53,34 @@ In dieser Übung simulieren wir eine Banküberweisung zwischen zwei Konten und d
 
 ```sql
 -- Zeige den ursprünglichen Kontostand
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Alice', 'Bob');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Alice', 'Bob');
 
 BEGIN;
 
 -- Abheben von Alices Konto
-UPDATE transaktions_test SET kontostand = kontostand - 200 WHERE name = 'Alice';
+UPDATE transaktions_test 
+    SET kontostand = kontostand - 200 
+    WHERE name = 'Alice';
 
 -- Einzahlen auf Bobs Konto
-UPDATE transaktions_test SET kontostand = kontostand + 200 WHERE name = 'Bob';
+UPDATE transaktions_test 
+    SET kontostand = kontostand + 200 
+    WHERE name = 'Bob';
 
 -- Prüfen der Zwischenstände (nur innerhalb dieser Transaktion sichtbar)
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Alice', 'Bob');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Alice', 'Bob');
 
 -- Transaktion erfolgreich abschliessen
 COMMIT;
 
 -- Zeige die neuen Kontostände nach dem Commit
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Alice', 'Bob');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Alice', 'Bob');
 ```
 
 ### b) Rollback demonstrieren
@@ -67,24 +89,34 @@ SELECT name, kontostand FROM transaktions_test WHERE name IN ('Alice', 'Bob');
 
 ```sql
 -- Zeige den aktuellen Kontostand
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Bob', 'Charlie');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Bob', 'Charlie');
 
 BEGIN;
 
 -- Abheben von Bobs Konto
-UPDATE transaktions_test SET kontostand = kontostand - 300 WHERE name = 'Bob';
+UPDATE transaktions_test 
+    SET kontostand = kontostand - 300 
+    WHERE name = 'Bob';
 
 -- Einzahlen auf Charlies Konto
-UPDATE transaktions_test SET kontostand = kontostand + 300 WHERE name = 'Charlie';
+UPDATE transaktions_test 
+    SET kontostand = kontostand + 300 
+    WHERE name = 'Charlie';
 
 -- Prüfen der Zwischenstände
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Bob', 'Charlie');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Bob', 'Charlie');
 
 -- Angenommen, wir entdecken ein Problem und möchten die Transaktion abbrechen
 ROLLBACK;
 
 -- Zeige die Kontostände nach dem Rollback - sie sollten unverändert sein
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Bob', 'Charlie');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Bob', 'Charlie');
 ```
 
 ### c) Fehler innerhalb einer Transaktion
@@ -93,20 +125,26 @@ SELECT name, kontostand FROM transaktions_test WHERE name IN ('Bob', 'Charlie');
 BEGIN;
 
 -- Abheben von Charlies Konto
-UPDATE transaktions_test SET kontostand = kontostand - 200 WHERE name = 'Charlie';
+UPDATE transaktions_test 
+    SET kontostand = kontostand - 200 
+    WHERE name = 'Charlie';
 
 -- Versuche eine ungültige Operation, die einen Fehler auslöst
 -- (z.B. Division durch Null)
 SELECT 1/0;
 
 -- Diese Anweisung wird nicht erreicht, da der obige Fehler die Transaktion abbricht
-UPDATE transaktions_test SET kontostand = kontostand + 200 WHERE name = 'Diana';
+UPDATE transaktions_test 
+    SET kontostand = kontostand + 200 
+    WHERE name = 'Diana';
 
 -- Versuche zu committen (wird nicht ausgeführt wegen des Fehlers)
 COMMIT;
 
 -- Überprüfe, dass keine Änderungen vorgenommen wurden
-SELECT name, kontostand FROM transaktions_test WHERE name IN ('Charlie', 'Diana');
+SELECT name, kontostand 
+    FROM transaktions_test 
+    WHERE name IN ('Charlie', 'Diana');
 ```
 
 ## Aufgaben
