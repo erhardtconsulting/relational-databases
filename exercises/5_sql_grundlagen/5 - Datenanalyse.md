@@ -1,3 +1,11 @@
+---
+title: "SQL-Grundlagen / Übung 5: SQL-Grundlagen für Datenanalyse und Reporting"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - SQL
+---
 # Übung 5: SQL-Grundlagen für Datenanalyse und Reporting
 
 ## Lernziele

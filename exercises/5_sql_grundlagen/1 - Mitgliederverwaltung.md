@@ -1,3 +1,11 @@
+---
+title: "SQL-Grundlagen / Übung 1: SQL-Grundlagen für die Mitgliederverwaltung"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - SQL
+---
 # Übung 1: SQL-Grundlagen für die Mitgliederverwaltung
 
 ## Lernziele
@@ -58,17 +66,8 @@ VALUES (
 
 -- Mitglied mit ID abfragen (Ergebnis merken für den nächsten Schritt)
 SELECT PersID
-FROM Person
-WHERE Name = 'Muster' AND Vorname = 'Maria' AND Eintritt = CURRENT_DATE;
-
--- Dem neuen Mitglied die Standard-Mitgliedsfunktion zuweisen
--- (Die PersID muss aus der vorherigen Abfrage eingesetzt werden)
-INSERT INTO Funktionsbesetzung (FunkID, PersID, Antritt)
-VALUES (
-    (SELECT FunkID FROM Funktion WHERE Bezeichner = 'Mitglied'),
-    'hier-ermittelte-uuid-einsetzen',  -- Diese UUID muss vom Anwender durch das Ergebnis der vorherigen Abfrage ersetzt werden
-    CURRENT_DATE
-);
+    FROM Person
+    WHERE Name = 'Muster' AND Vorname = 'Maria' AND Eintritt = CURRENT_DATE;
 
 -- Schritt 4: Transaktion abschliessen
 COMMIT;
@@ -100,7 +99,7 @@ ORDER BY
     p.Name, p.Vorname;
 ```
 
-**Übungsaufgabe**: Erweitere die Abfrage, sodass auch die primäre Funktion (falls vorhanden) jedes Mitglieds angezeigt wird.
+**Übungsaufgabe**: Erweitere die Abfrage, sodass nur Mitglieder mit dem Status "aktiv" angezeigt werden.
 
 ### Aufgabe 3: Säumige Zahler identifizieren
 

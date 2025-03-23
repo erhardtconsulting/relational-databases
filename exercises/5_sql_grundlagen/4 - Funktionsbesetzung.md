@@ -1,3 +1,11 @@
+---
+title: "SQL-Grundlagen / Übung 4: SQL-Grundlagen für die Funktionsbesetzung im Verein"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - SQL
+---
 # Übung 4: SQL-Grundlagen für die Funktionsbesetzung im Verein
 
 ## Lernziele
@@ -44,8 +52,8 @@ INSERT INTO Funktionsbesetzung (
     FunkID, PersID, Antritt, Ruecktritt
 )
 VALUES (
-    (SELECT FunkID FROM Funktion WHERE Bezeichner = 'Kassier'),
-    (SELECT PersID FROM Person WHERE Name = 'Huber' AND Vorname = 'Peter'),
+    (SELECT FunkID FROM Funktion WHERE Bezeichner = 'Kasse'),
+    (SELECT PersID FROM Person WHERE Name = 'Wendel' AND Vorname = 'Otto'),
     '2025-01-01',  -- Antritt
     NULL  -- Noch kein Rücktritt
 );
@@ -62,8 +70,8 @@ Erfasse den Rücktritt eines Funktionsträgers.
 UPDATE Funktionsbesetzung
 SET Ruecktritt = '2025-12-31'
 WHERE 
-    FunkID = (SELECT FunkID FROM Funktion WHERE Bezeichner = 'Präsident')
-    AND PersID = (SELECT PersID FROM Person WHERE Name = 'Vogel' AND Vorname = 'Anna')
+    FunkID = (SELECT FunkID FROM Funktion WHERE Bezeichner = 'Praesidium')
+    AND PersID = (SELECT PersID FROM Person WHERE Name = 'Gruber' AND Vorname = 'Romy')
     AND Ruecktritt IS NULL;
 ```
 
@@ -80,6 +88,7 @@ SELECT
     p.Name,
     p.Vorname,
     fb.Antritt,
+    fb.Ruecktritt,
     EXTRACT(YEAR FROM AGE(CURRENT_DATE, fb.Antritt)) AS Jahre_im_Amt
 FROM 
     Funktion f
@@ -88,19 +97,19 @@ JOIN
 JOIN 
     Person p ON fb.PersID = p.PersID
 WHERE 
-    fb.Ruecktritt IS NULL  -- Nur aktuelle Funktionsträger
+    fb.Ruecktritt IS NULL OR fb.Ruecktritt >= CURRENT_DATE  -- Nur aktuelle Funktionsträger
 ORDER BY 
     CASE 
-        WHEN f.Bezeichner = 'Präsident' THEN 1
-        WHEN f.Bezeichner = 'Vizepräsident' THEN 2
-        WHEN f.Bezeichner = 'Kassier' THEN 3
-        WHEN f.Bezeichner = 'Aktuar' THEN 4
+        WHEN f.Bezeichner = 'Praesidium' THEN 1
+        WHEN f.Bezeichner = 'Vizepraesidium' THEN 2
+        WHEN f.Bezeichner = 'Kasse' THEN 3
+        WHEN f.Bezeichner = 'Beisitz' THEN 4
         ELSE 5
     END,  -- Benutzerdefinierte Sortierung nach Wichtigkeit
     f.Bezeichner;
 ```
 
-**Übungsaufgabe**: Erweitere die Abfrage, sodass zusätzlich die Kontaktinformationen der Funktionsträger (z.B. Telefonnummer oder E-Mail) angezeigt werden, falls diese in der Datenbank vorhanden sind.
+**Übungsaufgabe**: Erweitere die Abfrage, sodass zusätzlich die Kontaktinformationen der Funktionsträger (z.B. Adresse oder Wohnort) angezeigt werden.
 
 ### Aufgabe 4: Funktionshistorie anzeigen
 
@@ -145,19 +154,7 @@ In der Praxis gibt es oft Übergangszeiträume, in denen ein scheidender und ein
 2. Welche SQL-Abfragen wären für die Anzeige von Übergangsphasen notwendig?
 3. Wie könnten automatische Prüfungen gewährleisten, dass keine Inkonsistenzen entstehen?
 
-### Herausforderung 2: Stellvertretungen
-Vereine benötigen oft eine Regelung für Stellvertretungen bei temporärer Abwesenheit von Funktionsträgern. Entwirf ein System zur Verwaltung von:
-1. Stellvertretungsregelungen (wer vertritt wen?)
-2. Abwesenheitsperioden (z.B. Krankheit, Urlaub)
-3. Automatische Anzeige der aktuell handlungsfähigen Funktionsträger
-
-### Herausforderung 3: Funktionsabhängigkeiten und -hierarchien
-Entwickle ein erweitertes Datenbankschema, das Abhängigkeiten und Hierarchien zwischen Funktionen abbildet, z.B.:
-1. Ressortverantwortliche mit untergeordneten Teammitgliedern
-2. Berechtigungsstrukturen (wer darf welche Entscheidungen treffen)
-3. Berichtswege und Kommunikationsflüsse
-
-### Erweiterung: Wahlen und Amtsbestätigungen
+### Herausforderung 2: Wahlen und Amtsbestätigungen
 Überlege, wie du das Datenmodell erweitern könntest, um auch Informationen über:
 1. Wahlverfahren und -ergebnisse
 2. Amtsbestätigungen/Wiederwahlen

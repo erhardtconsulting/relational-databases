@@ -1,3 +1,11 @@
+---
+title: "SQL-Grundlagen / Übung 3: SQL-Grundlagen für die Sponsorenverwaltung"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - SQL
+---
 # Übung 3: SQL-Grundlagen für die Sponsorenverwaltung
 
 ## Lernziele
@@ -57,7 +65,7 @@ VALUES (
 -- Ansprechperson im Verein erfassen
 INSERT INTO Sponsorenkontakt (PersID, SponID)
 VALUES (
-    (SELECT PersID FROM Person WHERE Name = 'Meier' AND Vorname = 'Thomas'),
+    (SELECT PersID FROM Person WHERE Name = 'Meyer' AND Vorname = 'Petra'),
     (SELECT SponID FROM Sponsor WHERE Name = 'Tech Solutions AG')
 );
 ```

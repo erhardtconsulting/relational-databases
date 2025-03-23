@@ -1,3 +1,11 @@
+---
+title: "SQL-Grundlagen / Übung 2: SQL-Grundlagen für das Veranstaltungsmanagement"
+author: 
+    - Simon Erhardt
+date: "23.03.2025"
+keywords:
+    - SQL
+---
 # Übung 2: SQL-Grundlagen für das Veranstaltungsmanagement
 
 ## Lernziele
@@ -49,7 +57,7 @@ VALUES (
     'Stadtpark Bern',
     '2025-07-20',  -- Datum im ISO-Format
     1500.00,  -- Geschätzte Kosten
-    (SELECT PersID FROM Person WHERE Name = 'Schmidt' AND Vorname = 'Hans')  -- Organisator
+    (SELECT PersID FROM Person WHERE Name = 'Frei' AND Vorname = 'Barbara')  -- Organisator
 );
 ```
 
@@ -63,7 +71,7 @@ Erfasse Anmeldungen von Mitgliedern für den Anlass.
 -- Teilnehmer für einen Anlass registrieren
 INSERT INTO Teilnehmer (PersID, AnlaID)
 VALUES (
-    (SELECT PersID FROM Person WHERE Name = 'Müller' AND Vorname = 'Max'),
+    (SELECT PersID FROM Person WHERE Name = 'Cadola' AND Vorname = 'Leo'),
     (SELECT AnlaID FROM Anlass WHERE Bezeichner = 'Sommerfest 2025')
 );
 
@@ -75,7 +83,7 @@ SELECT
 FROM 
     Person p
 WHERE 
-    p.Name IN ('Weber', 'Schneider', 'Fischer')
+    p.Name IN ('Bart', 'Huber', 'Luder')
     AND p.Austritt IS NULL;
 ```
 
