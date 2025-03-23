@@ -1,6 +1,6 @@
 name: Fehler im Lehrmaterial melden
 description: Melde einen Fehler in Buch, Präsentation oder Übungsblättern
-title: "[Bug]: "
+title: ""
 labels: ["bug", "lehrmaterial"]
 assignees:
   - chrootlogin
