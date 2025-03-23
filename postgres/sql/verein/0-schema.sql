@@ -34,7 +34,7 @@ CREATE TABLE Person (
     Strasse_Nr  VARCHAR(50) NOT NULL,
     PLZ         CHAR(4) NOT NULL,
     Ort         VARCHAR(50) NOT NULL,
-    bezahlt     CHAR(1) NOT NULL,
+    bezahlt     CHAR(1) NOT NULL DEFAULT 'N',
     Bemerkungen VARCHAR(100) ,
     Eintritt    DATE,
     Austritt    DATE,
@@ -43,6 +43,7 @@ CREATE TABLE Person (
     CONSTRAINT pk_Person_PersID PRIMARY KEY (PersID),
     CONSTRAINT fk_Person_MentorID FOREIGN KEY (MentorID) REFERENCES Person (PersID),
     CONSTRAINT fk_Person_StatID FOREIGN KEY (StatID) REFERENCES Status (StatID),
+    CONSTRAINT ck_Person_bezahlt CHECK (bezahlt = 'N' OR bezahlt = 'J'),
     CONSTRAINT ck_Person_Austritt CHECK (Austritt IS NULL OR (Eintritt <= Austritt))
 );
 
