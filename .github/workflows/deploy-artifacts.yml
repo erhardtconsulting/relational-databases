@@ -7,6 +7,7 @@ on:
     paths:
       - 'docs/**'
       - 'exercises/**'
+      - 'slides/**'
       - '.github/workflows/deploy-artifacts.yml'
       - 'pyproject.toml'
       - 'poetry.lock'
