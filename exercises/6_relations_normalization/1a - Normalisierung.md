@@ -1,4 +1,13 @@
-# Übung 1: Normalisierung einer Datenbank
+---
+title: "Relationen und Normalisierung / Übung 1a: Normalisierung einer Datenbank"
+author: 
+    - Simon Erhardt
+date: "28.03.2025"
+keywords:
+    - Relationen
+    - Normalisierung
+---
+# Übung 1a: Normalisierung einer Datenbank
 
 ## Lernziele
 
@@ -13,18 +22,46 @@ Normalisierung ist ein fundamentaler Prozess im Datenbankdesign, der dazu dient,
 
 ## Ausgangssituation: Bibliothek
 
-Die Bibliothek einer Hochschule verwendet folgende denormalisierte Tabelle, um Bücher, Autoren und Ausleihen zu verwalten:
+Die Bibliothek einer Hochschule verwendet folgende denormalisierte Tabelle, um Bücher, Autoren und Ausleihen zu verwalten. Die Tabelle ist hier in drei thematisch zusammengehörige Teile aufgeteilt:
 
-| BuchID | Titel                        | ISBN          | Kategorie  | Erscheinungsjahr | Autor         | AutorEmail           | Regal | Ausgeliehen_von | Ausleih_Datum | Rückgabe_bis  |
-|--------|------------------------------|---------------|------------|------------------|---------------|----------------------|-------|----------------|---------------|---------------|
-| 1      | Database Systems             | 978-0321197849| Informatik | 2003             | Thomas Connolly| t.connolly@edu.com  | A12   | Anna Schmidt   | 2025-03-15    | 2025-04-05    |
-| 2      | Database Systems             | 978-0321197849| Informatik | 2003             | Thomas Connolly| t.connolly@edu.com  | A12   | Max Müller     | 2025-02-10    | 2025-03-03    |
-| 3      | Clean Code                   | 978-0132350884| Informatik | 2008             | Robert Martin  | r.martin@clean.com  | B45   | NULL           | NULL          | NULL          |
-| 4      | The Art of Computer Programming| 978-0201896831| Informatik | 1997          | Donald Knuth   | d.knuth@stanford.edu| C23   | Peter Meier    | 2025-03-20    | 2025-04-10    |
-| 5      | Introduction to Algorithms   | 978-0262033848| Informatik | 2009             | Thomas Cormen  | t.cormen@algo.edu   | B46   | Anna Schmidt   | 2025-03-01    | 2025-03-22    |
-| 5      | Introduction to Algorithms   | 978-0262033848| Informatik | 2009             | Charles Leiserson| c.leiserson@mit.edu| B46   | Anna Schmidt   | 2025-03-01    | 2025-03-22    |
-| 6      | Physics for Scientists       | 978-0136139263| Physik     | 2007             | Paul Tipler    | p.tipler@physics.org| D31   | NULL           | NULL          | NULL          |
-| 7      | Organic Chemistry            | 978-0471756149| Chemie     | 2006             | T.W. Graham Solomons| g.solomons@chem.org| E14 | Lisa Weber     | 2025-03-05    | 2025-03-26    |
+**Tabelle 1: Buchdetails**
+
+| BuchID | Titel                        | ISBN          | Kategorie  | Erscheinungsjahr | Regal |
+|--------|------------------------------|---------------|------------|------------------|-------|
+| 1      | Database Systems             | 978-0321197849| Informatik | 2003             | A12   |
+| 2      | Database Systems             | 978-0321197849| Informatik | 2003             | A12   |
+| 3      | Clean Code                   | 978-0132350884| Informatik | 2008             | B45   |
+| 4      | The Art of Computer Programming| 978-0201896831| Informatik | 1997          | C23   |
+| 5      | Introduction to Algorithms   | 978-0262033848| Informatik | 2009             | B46   |
+| 5      | Introduction to Algorithms   | 978-0262033848| Informatik | 2009             | B46   |
+| 6      | Physics for Scientists       | 978-0136139263| Physik     | 2007             | D31   |
+| 7      | Organic Chemistry            | 978-0471756149| Chemie     | 2006             | E14   |
+
+**Tabelle 2: Autordetails**
+
+| BuchID | Autor                  | AutorEmail           |
+|--------|------------------------|----------------------|
+| 1      | Thomas Connolly        | t.connolly@edu.com   |
+| 2      | Thomas Connolly        | t.connolly@edu.com   |
+| 3      | Robert Martin          | r.martin@clean.com   |
+| 4      | Donald Knuth           | d.knuth@stanford.edu |
+| 5      | Thomas Cormen          | t.cormen@algo.edu    |
+| 5      | Charles Leiserson      | c.leiserson@mit.edu  |
+| 6      | Paul Tipler            | p.tipler@physics.org |
+| 7      | T.W. Graham Solomons   | g.solomons@chem.org  |
+
+**Tabelle 3: Ausleihdetails**
+
+| BuchID | Ausgeliehen_von | Ausleih_Datum | Rückgabe_bis  |
+|--------|----------------|---------------|---------------|
+| 1      | Anna Schmidt   | 2025-03-15    | 2025-04-05    |
+| 2      | Max Müller     | 2025-02-10    | 2025-03-03    |
+| 3      | NULL           | NULL          | NULL          |
+| 4      | Peter Meier    | 2025-03-20    | 2025-04-10    |
+| 5      | Anna Schmidt   | 2025-03-01    | 2025-03-22    |
+| 5      | Anna Schmidt   | 2025-03-01    | 2025-03-22    |
+| 6      | NULL           | NULL          | NULL          |
+| 7      | Lisa Weber     | 2025-03-05    | 2025-03-26    |
 
 ## Aufgaben
 
@@ -72,6 +109,7 @@ Du kannst das Diagramm mit einem Tool deiner Wahl erstellen (z.B. draw.io, Lucid
 ## Abgabe
 
 Deine Lösung sollte folgende Elemente enthalten:
+
 - Antworten zu allen Aufgaben
 - Alle Tabellen der verschiedenen Normalformen
 - Das ER-Diagramm

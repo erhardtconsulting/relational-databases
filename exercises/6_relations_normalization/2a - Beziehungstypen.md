@@ -1,4 +1,13 @@
-# Übung 2: Identifikation und Modellierung von Beziehungstypen
+---
+title: "Relationen und Normalisierung / Übung 2a: Identifikation und Modellierung von Beziehungstypen"
+author: 
+    - Simon Erhardt
+date: "28.03.2025"
+keywords:
+    - Relationen
+    - Normalisierung
+---
+# Übung 2a: Identifikation und Modellierung von Beziehungstypen
 
 ## Lernziele
 
@@ -23,7 +32,7 @@ Ein Online-Shop für Computer-Hardware benötigt eine neue Datenbank. Aus Gespr�
 6. Jede Bestellung enthält ein oder mehrere Produkte in unterschiedlichen Mengen.
 7. Zu jeder Bestellung werden Bestelldatum, Versandadresse und Zahlungsmethode gespeichert.
 8. Jeder Kunde kann eine oder mehrere Versandadressen hinterlegen.
-9. Jedes Produkt kann mehrere technische Spezifikationen haben (z.B. Taktrate, Speichergröße).
+9. Jedes Produkt kann mehrere technische Spezifikationen haben (z.B. Taktrate, Speichergrösse).
 10. Ein Produkt kann zu mehreren verwandten Produkten in Beziehung stehen (z.B. kompatible Komponenten).
 
 ## Aufgaben
@@ -73,6 +82,7 @@ c) Entscheide, welche zusätzlichen Attribute die Zwischentabelle haben sollte u
 ## Abgabe
 
 Deine Lösung sollte folgende Elemente enthalten:
+
 - Identifikation aller Entitäten und Beziehungen mit Begründungen
 - Das ER-Diagramm
 - Tabellenstrukturen für alle identifizierten Beziehungstypen

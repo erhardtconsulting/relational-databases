@@ -1,4 +1,13 @@
-# Übung 3: Erweiterte Relationenmodellierung
+---
+title: "Relationen und Normalisierung / Übung 2b: Erweiterte Relationenmodellierung"
+author: 
+    - Simon Erhardt
+date: "28.03.2025"
+keywords:
+    - Relationen
+    - Normalisierung
+---
+# Übung 2b: Erweiterte Relationenmodellierung
 
 ## Lernziele
 
@@ -65,9 +74,12 @@ c) Entscheide dich für eine der Alternativen und begründe deine Wahl.
 ### 4. Umsetzung komplexer Beziehungen in relationale Tabellen
 
 a) Überführe die folgenden komplexen Beziehungen aus deinem ER-Diagramm in relationale Tabellen:
-   - Die interdisziplinären Studiengänge (mehrere Fakultäten bieten einen Studiengang an)
-   - Die Arbeitsgruppen (mit Professoren, Assistenten und Studierenden)
-   - Die Beziehung zwischen Studierenden und Lehrveranstaltungen (mit Noten)
+
+   **1. Die interdisziplinären Studiengänge** (mehrere Fakultäten bieten einen Studiengang an)
+   
+   **2. Die Arbeitsgruppen** (mit Professoren, Assistenten und Studierenden)
+   
+   **3. Die Beziehung zwischen Studierenden und Lehrveranstaltungen** (mit Noten)
 
 b) Lege für jede Tabelle fest:
    - Attribute
@@ -89,8 +101,9 @@ b) Schlage mindestens zwei konkrete Verbesserungen für dein Design vor und erl�
 ## Abgabe
 
 Deine Lösung sollte folgende Elemente enthalten:
-- Vollständige Analyse der Entitäten und Beziehungen
-- Detailliertes ER-Diagramm mit allen relevanten Elementen
-- Ausführliche Diskussion der Modellierungsentscheidungen
-- Relationale Umsetzung der komplexen Beziehungen
-- Kritische Reflexion und Verbesserungsvorschläge
+
+ - Vollständige Analyse der Entitäten und Beziehungen
+ - Detailliertes ER-Diagramm mit allen relevanten Elementen
+ - Ausführliche Diskussion der Modellierungsentscheidungen
+ - Relationale Umsetzung der komplexen Beziehungen
+ - Kritische Reflexion und Verbesserungsvorschläge
