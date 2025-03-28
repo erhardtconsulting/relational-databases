@@ -52,6 +52,15 @@ project:
         - file: 5_sql_basics/3_data_manipulation.md
         - file: 5_sql_basics/4_practical_examples.md
         - file: 5_sql_basics/5_conclusion.md
+    - title: Relationen und Normalisierung
+      file: 6_relations_normalization/0_intro.md
+      children:
+        - file: 6_relations_normalization/1_relational_basics.md
+        - file: 6_relations_normalization/2_relationships.md
+        - file: 6_relations_normalization/3_problems.md
+        - file: 6_relations_normalization/4_normalization.md
+        - file: 6_relations_normalization/5_implementation.md
+        - file: 6_relations_normalization/6_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:
