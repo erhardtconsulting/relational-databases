@@ -61,6 +61,12 @@ project:
         - file: 6_relations_normalization/4_normalization.md
         - file: 6_relations_normalization/5_implementation.md
         - file: 6_relations_normalization/6_conclusion.md
+    - title: Fortgeschrittenes SQL
+      file: 7_advanced_sql/0_intro.md
+      children:
+        - file: 7_advanced_sql/1_data_definition_language.md
+        - file: 7_advanced_sql/2_table_joins.md
+        - file: 7_advanced_sql/3_aggregation_grouping.md
   license: CC-BY-SA-4.0
   open_access: true
 site:
