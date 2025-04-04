@@ -1,4 +1,13 @@
-# Übung: Einfache Join-Operationen
+---
+title: "Fortgeschrittenes SQL / Übung 2a: Einfache Join-Operationen"
+author: 
+    - Simon Erhardt
+date: "05.04.2025"
+keywords:
+    - SQL
+---
+
+# Übung 2a: Einfache Join-Operationen
 
 ## Lernziele
 

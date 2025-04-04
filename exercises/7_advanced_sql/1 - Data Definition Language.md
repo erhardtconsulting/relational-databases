@@ -1,3 +1,12 @@
+---
+title: "Fortgeschrittenes SQL / Übung 1: Data Definition Language (DDL)"
+author: 
+    - Simon Erhardt
+date: "05.04.2025"
+keywords:
+    - SQL
+---
+
 # Übung: Data Definition Language (DDL)
 
 ## Lernziele
@@ -19,45 +28,7 @@ Du bist für die Entwicklung einer Datenbank für eine kleine Bibliothek verantw
 
 Das folgende ER-Diagramm zeigt die Struktur der Bibliotheksdatenbank:
 
-```mermaid
-erDiagram
-    AUTOR {
-        int AutorID PK
-        string Name
-        string Vorname
-        int Geburtsjahr
-    }
-    
-    BUCH {
-        int BuchID PK
-        string Titel
-        string ISBN
-        int Jahr
-        string Verlag
-        int AutorID FK
-    }
-    
-    LESER {
-        int LeserID PK
-        string Name
-        string Email
-        string Adresse
-        string Telefon
-    }
-    
-    AUSLEIHE {
-        int AusleihID PK
-        int BuchID FK
-        int LeserID FK
-        date Ausleihdatum
-        date Rueckgabedatum
-        boolean Verlaengert
-    }
-    
-    AUTOR ||--o{ BUCH : "hat geschrieben"
-    BUCH ||--o{ AUSLEIHE : "wird ausgeliehen"
-    LESER ||--o{ AUSLEIHE : "leiht aus"
-```
+![](exercises/7_advanced_sql/img/bibliothek.png)
 
 ### Teil 1: Basistabellen erstellen
 

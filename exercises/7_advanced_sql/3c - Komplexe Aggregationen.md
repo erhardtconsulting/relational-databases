@@ -1,4 +1,13 @@
-# Übung: Komplexe Aggregationen
+---
+title: "Fortgeschrittenes SQL / Übung 3c: Komplexe Aggregationen"
+author: 
+    - Simon Erhardt
+date: "05.04.2025"
+keywords:
+    - SQL
+---
+
+# Übung 3c: Komplexe Aggregationen
 
 ## Lernziele
 

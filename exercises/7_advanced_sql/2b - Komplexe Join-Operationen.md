@@ -1,4 +1,13 @@
-# Übung: Komplexe Join-Operationen
+---
+title: "Fortgeschrittenes SQL / Übung 2a: Komplexe Join-Operationen"
+author: 
+    - Simon Erhardt
+date: "05.04.2025"
+keywords:
+    - SQL
+---
+
+# Übung 2b: Komplexe Join-Operationen
 
 ## Lernziele
 

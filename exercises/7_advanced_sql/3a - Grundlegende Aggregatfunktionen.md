@@ -1,4 +1,13 @@
-# Übung: Grundlegende Aggregatfunktionen
+---
+title: "Fortgeschrittenes SQL / Übung 3a: Grundlegende Aggregatfunktionen"
+author: 
+    - Simon Erhardt
+date: "05.04.2025"
+keywords:
+    - SQL
+---
+
+# Übung 3a: Grundlegende Aggregatfunktionen
 
 ## Lernziele
 

@@ -1,4 +1,13 @@
-# Übung: Gruppierung und Filterung von Daten
+---
+title: "Fortgeschrittenes SQL / Übung 3b: Gruppierung und Filterung"
+author: 
+    - Simon Erhardt
+date: "05.04.2025"
+keywords:
+    - SQL
+---
+
+# Übung 3b: Gruppierung und Filterung von Daten
 
 ## Lernziele
 
