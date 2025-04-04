@@ -75,6 +75,74 @@ CREATE TABLE Person (
 );
 ```
 
+#### Auto-inkrementierende Schlüssel
+
+Ein häufiges Muster in Datenbankdesign ist die Verwendung von automatisch inkrementierenden Werten für Primärschlüssel. Diese gewährleisten eindeutige Identifikation jeder Zeile ohne manuelle Eingabe, was Fehler reduziert und die Arbeit erleichtert.
+
+**SERIAL in PostgreSQL**
+
+In PostgreSQL ist `SERIAL` ein spezieller Pseudodatentyp, der automatisch eine autoinkrementierende Ganzzahl erzeugt:
+
+```sql
+CREATE TABLE Kunde (
+    KundenID SERIAL PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100)
+);
+```
+
+Was passiert im Hintergrund:
+1. PostgreSQL erstellt eine Sequenz (`kunde_kundenid_seq`)
+2. Die KundenID-Spalte wird als `integer NOT NULL DEFAULT nextval('kunde_kundenid_seq')` definiert
+3. Die Sequenz wird automatisch beim Einfügen neuer Zeilen inkrementiert
+
+Beim Einfügen einer neuen Zeile muss die ID nicht angegeben werden:
+
+```sql
+INSERT INTO Kunde (Name, Email) VALUES ('Max Mustermann', 'max@example.com');
+```
+
+PostgreSQL weist automatisch die nächste Sequenznummer zu.
+
+**AUTO_INCREMENT in MySQL**
+
+In MySQL wird stattdessen das `AUTO_INCREMENT`-Attribut verwendet:
+
+```sql
+CREATE TABLE Kunde (
+    KundenID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100)
+);
+```
+
+**IDENTITY in Microsoft SQL Server**
+
+SQL Server verwendet das `IDENTITY`-Attribut für denselben Zweck:
+
+```sql
+CREATE TABLE Kunde (
+    KundenID INT IDENTITY(1,1) PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100)
+);
+```
+
+Hier bedeutet `IDENTITY(1,1)`: Starte bei 1 und erhöhe um 1 für jede neue Zeile.
+
+**Vorteile autoinkrementiender Schlüssel:**
+- Garantierte Eindeutigkeit ohne manuelle Verwaltung
+- Optimierte Performance bei Indexierung
+- Einfache Handhabung von Fremdschlüsselbeziehungen
+- Bessere Lesbarkeit in Abfragen und Berichten
+
+**Wann nicht zu verwenden:**
+- Wenn natürliche Schlüssel erforderlich sind (z.B. ISBN-Nummern für Bücher)
+- In verteilten Systemen, wo ID-Kollisionen zwischen Datenbankinstanzen auftreten könnten
+- Bei hohem Import-/Export-Volumen zwischen verschiedenen Datenbanken
+
+In diesen Fällen können UUIDs (Universally Unique Identifiers) oder andere global eindeutige Schlüsselstrategien sinnvoller sein.
+
 #### Alteration von Tabellen
 
 Mit dem `ALTER TABLE`-Befehl kannst du bestehende Tabellen verändern. Du kannst Spalten hinzufügen, ändern oder entfernen, Constraints ergänzen oder löschen und andere Struktureigenschaften anpassen.
