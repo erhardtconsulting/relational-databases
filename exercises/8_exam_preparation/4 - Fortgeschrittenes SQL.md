@@ -114,44 +114,7 @@ e) Zeige alle Orte an, in denen mehr als 2 Personen wohnen, und gib auch die Anz
 
 Gegeben sei das folgende ER-Diagramm für ein einfaches Blog-System:
 
-```mermaid
-erDiagram
-    AUTOR ||--o{ ARTIKEL : schreibt
-    ARTIKEL }|--|| KATEGORIE : gehört_zu
-    ARTIKEL }o--o{ TAG : hat
-    
-    AUTOR {
-        int AutorID PK
-        string Name
-        string Email
-        date RegistriertSeit
-    }
-    
-    ARTIKEL {
-        int ArtikelID PK
-        string Titel
-        text Inhalt
-        date Veröffentlicht
-        int AutorID FK
-        int KategorieID FK
-    }
-    
-    KATEGORIE {
-        int KategorieID PK
-        string Name
-        string Beschreibung
-    }
-    
-    TAG {
-        int TagID PK
-        string Name
-    }
-    
-    ARTIKEL_TAG {
-        int ArtikelID PK,FK
-        int TagID PK,FK
-    }
-```
+![](img/artikel.png)
 
 Schreibe die DDL-Befehle, um dieses Datenbankschema zu implementieren. Achte dabei auf:
 
