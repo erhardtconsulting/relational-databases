@@ -67,6 +67,11 @@ project:
         - file: 7_advanced_sql/1_data_definition_language.md
         - file: 7_advanced_sql/2_table_joins.md
         - file: 7_advanced_sql/3_aggregation_grouping.md
+    - title: Benutzerverwaltung und Berechtigungen (DCL)
+      file: 8_user_management/0_intro.md
+      children:
+        - file: 8_user_management/1_users_and_permissions.md
+        - file: 8_user_management/2_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:

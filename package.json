@@ -6,7 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "slides:serve": "PORT=5000 marp -s -w ./slides",
+    "slides:serve": "PORT=5001 marp -s -w ./slides",
     "slides:pdf": "node node_modules/@marp-team/marp-cli/marp-cli.js -I slides -o slides/_build --pdf --allow-local-files"
   },
   "repository": {
