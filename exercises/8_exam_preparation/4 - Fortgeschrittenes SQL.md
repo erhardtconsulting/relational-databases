@@ -114,7 +114,7 @@ e) Zeige alle Orte an, in denen mehr als 2 Personen wohnen, und gib auch die Anz
 
 Gegeben sei das folgende ER-Diagramm für ein einfaches Blog-System:
 
-![](img/artikel.png)
+![](exercises/8_exam_preparation/img/artikel.png)
 
 Schreibe die DDL-Befehle, um dieses Datenbankschema zu implementieren. Achte dabei auf:
 
