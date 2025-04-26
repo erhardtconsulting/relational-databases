@@ -62,7 +62,6 @@ a) Erstelle eine Rolle `verkauf_rolle` für die Vertriebsmitarbeiter mit folgend
 
 b) Erstelle einen Benutzer `max_mueller` mit Passwort 'sicher123' und folgenden Eigenschaften:
    - Kann sich an der Datenbank anmelden
-   - Muss das Passwort bei der ersten Anmeldung ändern
    - Das Konto soll am 31.12.2025 ablaufen
 
 c) Erstelle zusätzlich die Rollen `marketing_rolle` und `admin_rolle` mit geeigneten Eigenschaften.
