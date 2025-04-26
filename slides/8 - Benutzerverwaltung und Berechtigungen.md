@@ -159,6 +159,7 @@ CREATE TABLE audit_log (
 -- Audit-Rolle erstellen und Rechte zuweisen
 CREATE ROLE audit_logger;
 GRANT INSERT ON TABLE audit_log TO audit_logger;
+GRANT USAGE ON SEQUENCE audit_log_log_id_seq TO audit_logger;
 
 -- Sicherstellen, dass keine anderen Rechte bestehen
 REVOKE UPDATE, DELETE ON TABLE audit_log FROM audit_logger;
