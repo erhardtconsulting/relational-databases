@@ -11,7 +11,7 @@ Nachdem der PostgreSQL-Container erfolgreich gestartet wurde, können wir nun ei
 ![Datenbanktyp auswählen](img/dbeaver_select_postgresql.png)
 
 ## Verbindungsparameter konfigurieren
-s
+
 1. Gib die folgenden Verbindungsparameter ein:
 
    - **Server Host**: localhost
@@ -29,6 +29,16 @@ s
 ![Verbindungstest erfolgreich](img/dbeaver_connection_test_success.png)
 
 4. Klicke auf "Fertig", um die Verbindung zu speichern.
+
+:::{seealso} Datenbank-Administrator
+
+Der `vereinuser` hat nur Zugriff auf die Datenbank `verein` und somit nur eingeschränkte Rechte. Möchtest du die Datenbank administrieren, benötigst du den Administrator.
+
+**Administrator Login**
+
+- **Benutzername**: postgres
+- **Passwort**: hftm_admin
+:::
 
 ## Verbindung verwenden
 
