@@ -14,15 +14,19 @@ keywords:
 # Fachübergreifendes Transfer-Projekt "Datenbankgestütztes Anwendungssystem"
 
 ## Übersicht
+
 In diesem Projekt wendest Du Dein Wissen aus verschiedenen Fachbereichen (Datenbanken, Programmierung, Projektmanagement) an, um ein ganzheitliches datenbankgestütztes System zu konzipieren. Der Fokus liegt auf dem Entwurf eines soliden Datenbankschemas und dessen Visualisierung durch ein ER-Diagramm.
 
 ## Ausgangssituation
+
 Die moderne Softwareentwicklung erfordert die Integration verschiedener Technologien. Eine zentrale Rolle spielen dabei Datenbanken, die das Fundament jeder datenintensiven Anwendung bilden. Ein gut durchdachtes Datenbankdesign ist entscheidend für die erfolgreiche Umsetzung des Gesamtsystems.
 
 ## Aufgabenstellung
+
 Entwickle ein vollständiges Datenbankschema für eine Anwendung Deiner Wahl. Das Schema soll als Grundlage für eine spätere Implementierung dienen.
 
-Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema vorschlagen:
+Folgende Themen können als Idee dienen:
+
 - Projektmanagementsystem (mit Projekten, Aufgaben, Ressourcen, Zeiterfassung)
 - E-Commerce-Plattform (mit Produkten, Bestellungen, Kunden, Bewertungen)
 - Bildungsmanagementsystem (mit Kursen, Studierenden, Dozenten, Bewertungen)
@@ -32,12 +36,14 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
 ## Konkrete Teilaufgaben
 
 ### 1. Anforderungsanalyse (25%)
+
 - Definiere 5-10 funktionale Anforderungen an dein System
 - Beschreibe die Hauptentitäten und deren wichtigste Attribute
 - Identifiziere die Beziehungen zwischen den Entitäten und deren Kardinalitäten (1:1, 1:n, n:m)
 - Beschreibe Geschäftsregeln, die durch das Datenbankschema abgebildet werden müssen
 
 ### 2. Konzeptionelles Datenbankdesign (35%)
+
 - Erstelle ein ER-Diagramm mit allen Entitäten, Attributen und Beziehungen
 - Verwende eine standardisierte Notation (Chen, Crow's Foot oder UML)
 - Kennzeichne Primärschlüssel, Fremdschlüssel und wichtige Constraints
@@ -45,6 +51,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
 - Verwende aussagekräftige Entitäts- und Attributnamen
 
 ### 3. Logisches Datenbankdesign (25%)
+
 - Überführe das ER-Diagramm in ein relationales Datenbankschema
 - Normalisiere dein Schema bis zur dritten Normalform (3NF)
 - Definiere geeignete Datentypen für alle Attribute
@@ -52,6 +59,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
 - Beschreibe, wie n:m-Beziehungen durch Zwischentabellen aufgelöst werden
 
 ### 4. SQL-Implementierung (15%)
+
 - Erstelle SQL-CREATE-Statements für alle Tabellen
 - Definiere Constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK)
 - Implementiere Referentielle Integrität durch entsprechende Constraints
@@ -60,6 +68,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
 ## Bewertungskriterien
 
 ### Anforderungsanalyse (25%)
+
 - **Vollständigkeit der Anforderungen** (0-3 Punkte)
   - 0: Unzureichende Anforderungen, wesentliche Aspekte fehlen
   - 1: Grundlegende Anforderungen vorhanden, aber wichtige Aspekte fehlen
@@ -85,6 +94,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
   - 3: Umfassende, konsistente Geschäftsregeln mit klarem Praxisbezug
 
 ### Konzeptionelles Datenbankdesign (35%)
+
 - **Vollständigkeit des ER-Diagramms** (0-3 Punkte)
   - 0: Unvollständiges Diagramm mit fehlenden wesentlichen Elementen
   - 1: Grundlegendes Diagramm mit mehreren fehlenden Elementen
@@ -116,6 +126,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
   - 3: Durchgehend klare, präzise und konsistente Benennung
 
 ### Logisches Datenbankdesign (25%)
+
 - **Überführung in relationales Schema** (0-3 Punkte)
   - 0: Falsche oder unvollständige Überführung
   - 1: Grundlegende Überführung mit mehreren Fehlern
@@ -141,6 +152,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
   - 3: Perfekte Auflösung aller n:m-Beziehungen mit Zwischentabellen
 
 ### SQL-Implementierung (15%)
+
 - **Korrektheit der CREATE-Statements** (0-3 Punkte)
   - 0: Falsche Syntax oder unvollständige Statements
   - 1: Grundlegende Syntax, aber mehrere Fehler
@@ -169,7 +181,7 @@ Du kannst zwischen folgenden Anwendungsdomänen wählen ODER ein eigenes Thema v
 
 Deine Abgabe soll folgende Dokumente enthalten:
 
-1. **Anforderungsdokument** (PDF, 2-3 Seiten)
+1. **Anforderungsdokument** (PDF, 1-3 Seiten)
    - Liste der funktionalen Anforderungen
    - Beschreibung der Hauptentitäten und ihrer Beziehungen
    - Erläuterung der Geschäftsregeln
@@ -178,7 +190,7 @@ Deine Abgabe soll folgende Dokumente enthalten:
    - Vollständiges Diagramm in standardisierter Notation
    - Legende zur verwendeten Notation (falls nötig)
 
-3. **Datenbankschema-Dokumentation** (PDF, 2-3 Seiten)
+3. **Datenbankschema-Dokumentation** (PDF, 1-3 Seiten)
    - Beschreibung aller Tabellen und ihrer Attribute
    - Erläuterung zur Normalisierung
    - Dokumentation der Beziehungen
@@ -188,4 +200,5 @@ Deine Abgabe soll folgende Dokumente enthalten:
    - Mit Kommentaren zur Erklärung komplexerer Konstrukte
 
 ## Abgabetermin
+
 Die vollständige Projektdokumentation ist bis zum **7.6.2025** einzureichen.
