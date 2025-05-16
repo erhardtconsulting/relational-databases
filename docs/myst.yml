@@ -72,6 +72,16 @@ project:
       children:
         - file: 8_user_management/1_users_and_permissions.md
         - file: 8_user_management/2_conclusion.md
+    - title: Object-Relational Mapping (ORM)
+      file: 9_orm/0_intro.md
+      children:
+        - file: 9_orm/1_orm_basics.md
+        - file: 9_orm/2_advantages_disadvantages.md
+        - file: 9_orm/3_hibernate_jpa.md
+        - file: 9_orm/4_schema_versioning.md
+        - file: 9_orm/5_orm_alternatives.md
+        - file: 9_orm/6_limitations.md
+        - file: 9_orm/7_conclusion.md
   license: CC-BY-SA-4.0
   open_access: true
 site:
