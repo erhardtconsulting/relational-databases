@@ -613,14 +613,14 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "jupyter-book"
-version = "2.0.0a3"
+version = "2.0.0b3"
 description = ""
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "jupyter_book-2.0.0a3-py3-none-any.whl", hash = "sha256:3328b6388cd9c9dd9b0d06b22ff031e53878a80d3ee40873daaef7ab393286ab"},
-    {file = "jupyter_book-2.0.0a3.tar.gz", hash = "sha256:558ed176a027294ef2890c807853cac2be039b11df2d531f909589ab26cdaf00"},
+    {file = "jupyter_book-2.0.0b3-py3-none-any.whl", hash = "sha256:ca01be03a4e5d54f7bfef1150837052ccb3ea3f8810a2687db59171f46ef30d0"},
+    {file = "jupyter_book-2.0.0b3.tar.gz", hash = "sha256:f55e23cc33721b13142e42753a28fd145158b97bcef2a513f7fcd2cc403f72f6"},
 ]
 
 [package.dependencies]
