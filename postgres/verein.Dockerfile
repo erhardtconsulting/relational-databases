@@ -1,4 +1,4 @@
-FROM docker.io/library/postgres:17.7@sha256:f337b026cb1fb954a93f2e33a62bf9ea7fffc1dafc1586c53b93922a8d6ee018
+FROM docker.io/library/postgres:17.7@sha256:1c2b6ae7bd9b9a334a956ea3b6fb9681351991e68fc1d6e8d3c6aa94fc43254a
 
 # Set default admin password (hftm_admin)
 ENV POSTGRES_PASSWORD=hftm_admin
