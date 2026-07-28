@@ -142,7 +142,7 @@ jobs:
           password: ${{ github.token }}
 
       - name: Push image to ghcr.io
-        uses: redhat-actions/push-to-registry@5ed88d269cf581ea9ef6dd6806d01562096bee9c # v2
+        uses: redhat-actions/push-to-registry@5860fc963bf8f2b3221773a023141612f010c469 # v2
         with:
           registry: ghcr.io/erhardtconsulting
           image: relational-databases
