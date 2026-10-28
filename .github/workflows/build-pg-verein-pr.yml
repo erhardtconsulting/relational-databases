@@ -30,7 +30,7 @@ jobs:
   call-build-workflow:
     name: Build & Push
     needs: get-version
-    uses: erhardtconsulting/relational-databases/.github/workflows/build-container.yml@main
+    uses: erhardtconsulting/relational-databases/.github/workflows/build-container.yml@db32fb14eada7a7cb756d30a8e07a5675bfd9a85 # main
     with:
       context: "postgres"
       dockerfile: "postgres/verein.Dockerfile"
