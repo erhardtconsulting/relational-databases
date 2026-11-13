@@ -30,7 +30,7 @@ permissions:
 jobs:
   build:
     name: Build image
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         platform: ${{ fromJSON(inputs.architectures) }}
@@ -83,7 +83,7 @@ jobs:
   push:
     if: ${{ inputs.push }}
     name: Push image
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: build
     steps:
       - name: Setup environment variables
